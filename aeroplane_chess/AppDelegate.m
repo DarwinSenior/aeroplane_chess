@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HelloWorldLayer.h"
+#import "MenuScene.h"
 
 @implementation aeroplane_chessAppDelegate
 @synthesize window=window_, glView=glView_;
@@ -21,7 +22,7 @@
 	
 	// connect the OpenGL view with the director
 	[director setView:glView_];
-
+    
 	// EXPERIMENTAL stuff.
 	// 'Effects' don't work correctly when autoscale is turned on.
 	// Use kCCDirectorResize_NoScale if you don't want auto-scaling.
@@ -32,8 +33,10 @@
 	
 	// Center main window
 	[window_ center];
+    
+    [director setFullScreen:YES];
 	
-	[director runWithScene:[HelloWorldLayer scene]];
+	[director runWithScene:[MenuScene scene]];
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication

@@ -128,6 +128,14 @@
 		CE6A2F611811CFAD0040CDA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F601811CFAD0040CDA9 /* main.m */; };
 		CE6A2F641811CFAD0040CDA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F631811CFAD0040CDA9 /* AppDelegate.m */; };
 		CE6A2F671811CFAD0040CDA9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F661811CFAD0040CDA9 /* HelloWorldLayer.m */; };
+		CE6A2F6E1811CFDA0040CDA9 /* board.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6A2F6D1811CFDA0040CDA9 /* board.jpg */; };
+		CE6A2F701811CFE10040CDA9 /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6A2F6F1811CFE10040CDA9 /* Yellow.png */; };
+		CE6A2F721811CFE50040CDA9 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6A2F711811CFE50040CDA9 /* Red.png */; };
+		CE6A2F741811CFE90040CDA9 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6A2F731811CFE90040CDA9 /* Blue.png */; };
+		CE6A2F761811CFEE0040CDA9 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6A2F751811CFEE0040CDA9 /* Green.png */; };
+		CE6A2F791811D0230040CDA9 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F781811D0230040CDA9 /* MenuScene.m */; };
+		CE6A2F7C1811D2260040CDA9 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F7B1811D2260040CDA9 /* GameLayer.m */; };
+		CE6A2F7F1811D5710040CDA9 /* planeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A2F7E1811D5710040CDA9 /* planeModels.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -398,6 +406,17 @@
 		CE6A2F631811CFAD0040CDA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE6A2F651811CFAD0040CDA9 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		CE6A2F661811CFAD0040CDA9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		CE6A2F6D1811CFDA0040CDA9 /* board.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = board.jpg; sourceTree = "<group>"; };
+		CE6A2F6F1811CFE10040CDA9 /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		CE6A2F711811CFE50040CDA9 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		CE6A2F731811CFE90040CDA9 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		CE6A2F751811CFEE0040CDA9 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		CE6A2F771811D0230040CDA9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		CE6A2F781811D0230040CDA9 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		CE6A2F7A1811D2260040CDA9 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		CE6A2F7B1811D2260040CDA9 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		CE6A2F7D1811D5710040CDA9 /* planeModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planeModels.h; sourceTree = "<group>"; };
+		CE6A2F7E1811D5710040CDA9 /* planeModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = planeModels.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +473,12 @@
 				CE6A2F631811CFAD0040CDA9 /* AppDelegate.m */,
 				CE6A2F651811CFAD0040CDA9 /* HelloWorldLayer.h */,
 				CE6A2F661811CFAD0040CDA9 /* HelloWorldLayer.m */,
+				CE6A2F771811D0230040CDA9 /* MenuScene.h */,
+				CE6A2F781811D0230040CDA9 /* MenuScene.m */,
+				CE6A2F7A1811D2260040CDA9 /* GameLayer.h */,
+				CE6A2F7B1811D2260040CDA9 /* GameLayer.m */,
+				CE6A2F7D1811D5710040CDA9 /* planeModels.h */,
+				CE6A2F7E1811D5710040CDA9 /* planeModels.m */,
 				CE6A2DDF1811CFAC0040CDA9 /* Resources */,
 				CE6A2DEA1811CFAC0040CDA9 /* libs */,
 				CE6A2F5E1811CFAD0040CDA9 /* Supporting Files */,
@@ -464,6 +489,11 @@
 		CE6A2DDF1811CFAC0040CDA9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE6A2F6D1811CFDA0040CDA9 /* board.jpg */,
+				CE6A2F731811CFE90040CDA9 /* Blue.png */,
+				CE6A2F711811CFE50040CDA9 /* Red.png */,
+				CE6A2F751811CFEE0040CDA9 /* Green.png */,
+				CE6A2F6F1811CFE10040CDA9 /* Yellow.png */,
 				CE6A2DE71811CFAC0040CDA9 /* icon.icns */,
 				CE6A2DE91811CFAC0040CDA9 /* Info.plist */,
 				CE6A2DE01811CFAC0040CDA9 /* English.lproj */,
@@ -895,9 +925,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6A2DE31811CFAC0040CDA9 /* InfoPlist.strings in Resources */,
+				CE6A2F761811CFEE0040CDA9 /* Green.png in Resources */,
 				CE6A2F421811CFAD0040CDA9 /* ChangeLog in Resources */,
 				CE6A2DE61811CFAC0040CDA9 /* MainMenu.xib in Resources */,
+				CE6A2F741811CFE90040CDA9 /* Blue.png in Resources */,
+				CE6A2F701811CFE10040CDA9 /* Yellow.png in Resources */,
+				CE6A2F6E1811CFDA0040CDA9 /* board.jpg in Resources */,
 				CE6A2DE81811CFAC0040CDA9 /* icon.icns in Resources */,
+				CE6A2F721811CFE50040CDA9 /* Red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,6 +993,7 @@
 				CE6A2E621811CFAC0040CDA9 /* CCParallaxNode.m in Sources */,
 				CE6A2DFA1811CFAC0040CDA9 /* CCActionGrid.m in Sources */,
 				CE6A2E431811CFAC0040CDA9 /* CCGrid.m in Sources */,
+				CE6A2F7F1811D5710040CDA9 /* planeModels.m in Sources */,
 				CE6A2F521811CFAD0040CDA9 /* quaternion.c in Sources */,
 				CE6A2E9F1811CFAD0040CDA9 /* CCSpriteFrame.m in Sources */,
 				CE6A2E0C1811CFAC0040CDA9 /* CCActionProgressTimer.m in Sources */,
@@ -981,6 +1017,7 @@
 				CE6A2F0C1811CFAD0040CDA9 /* TGAlib.m in Sources */,
 				CE6A2E151811CFAC0040CDA9 /* CCAnimation.m in Sources */,
 				CE6A2F401811CFAD0040CDA9 /* aabb.c in Sources */,
+				CE6A2F791811D0230040CDA9 /* MenuScene.m in Sources */,
 				CE6A2EB71811CFAD0040CDA9 /* CCTMXObjectGroup.m in Sources */,
 				CE6A2F191811CFAD0040CDA9 /* CDAudioManager.m in Sources */,
 				CE6A2EC61811CFAD0040CDA9 /* CCTransitionProgress.m in Sources */,
@@ -1014,6 +1051,7 @@
 				CE6A2E531811CFAC0040CDA9 /* CCMenu.m in Sources */,
 				CE6A2F5C1811CFAD0040CDA9 /* vec4.c in Sources */,
 				CE6A2E1E1811CFAC0040CDA9 /* CCCamera.m in Sources */,
+				CE6A2F7C1811D2260040CDA9 /* GameLayer.m in Sources */,
 				CE6A2E181811CFAC0040CDA9 /* CCAnimationCache.m in Sources */,
 				CE6A2E3A1811CFAC0040CDA9 /* CCGLProgram.m in Sources */,
 				CE6A2F2A1811CFAD0040CDA9 /* SimpleAudioEngine.m in Sources */,
@@ -1144,6 +1182,7 @@
 				CE6A2F6C1811CFAD0040CDA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
