@@ -34,7 +34,7 @@
 	// Center main window
 	[window_ center];
     
-    [director setFullScreen:YES];
+//    [director setFullScreen:YES];
 	
 	[director runWithScene:[MenuScene scene]];
 }

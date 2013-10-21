@@ -9,166 +9,124 @@
 #import "planeModels.h"
 
 static const float AbusolutePosition[72][2]={
-    {598,637},
-    {628,637},
-    {658,639},
-    {692,622},
-    {710,585},
-    {710,557},
-    {692,520},
-    {724,490},
-    {759,505},
-    {790,504},
-    {826,492},
-    {842,455},
-    {841,423},
-    {842,394},
-    {842,361},
-    {842,332},
-    {825,295},
-    {790,282},
-    {760,282},
-    {724,296},
-    {692,267},
-    {711,231},
-    {710,201},
-    {693,167},
-    {658,148},
-    {628,150},
-    {597,149},
-    {564,147},
-    {535,150},
-    {497,164},
-    {483,199},
-    {483,230},
-    {497,268},
-    {467,296},
-    {432,281},
-    {403,282},
-    {367,299},
-    {352,331},
-    {352,364},
-    {351,393},
-    {352,424},
-    {352,455},
-    {367,490},
-    {402,501},
-    {433,503},
-    {467,491},
-    {498,522},
-    {483,556},
-    {484,587},
-    {500,621},
-    {534,637},
-    {565,637},
-    {597,590},
-    {598,559},
-    {597,526},
-    {597,495},
-    {598,462},
-    {795,394},
-    {763,394},
-    {730,394},
-    {697,394},
-    {665,394},
-    {597,194},
-    {596,227},
-    {596,260},
-    {597,292},
-    {596,324},
-    {403,395},
-    {437,395},
-    {468,394},
-    {500,395},
-    {533,394},
+    {289,322},
+    {303,322},
+    {320,321},
+    {337,315},
+    {344,296},
+    {346,280},
+    {336,262},
+    {353,246},
+    {372,255},
+    {386,254},
+    {405,248},
+    {412,230},
+    {413,212},
+    {412,199},
+    {412,182},
+    {412,166},
+    {404,148},
+    {388,141},
+    {371,141},
+    {353,149},
+    {338,134},
+    {346,115},
+    {346,101},
+    {336,84},
+    {319,75},
+    {304,74},
+    {288,75},
+    {273,74},
+    {257,75},
+    {238,82},
+    {231,101},
+    {231,115},
+    {238,134},
+    {224,149},
+    {205,141},
+    {190,141},
+    {173,150},
+    {164,168},
+    {165,183},
+    {165,198},
+    {165,213},
+    {164,230},
+    {172,245},
+    {190,253},
+    {206,252},
+    {223,248},
+    {239,263},
+    {231,279},
+    {232,295},
+    {240,314},
+    {257,322},
+    {272,322},
+    {290,298},
+    {289,280},
+    {289,265},
+    {289,248},
+    {289,232},
+    {388,198},
+    {371,199},
+    {354,197},
+    {337,198},
+    {322,197},
+    {288,97},
+    {288,114},
+    {289,131},
+    {287,146},
+    {288,163},
+    {191,198},
+    {207,199},
+    {224,198},
+    {240,199},
+    {256,199},
     };
 static const PieceType posType[]={
     YELLOW, RED, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, RED, BLUE, RED, YELLOW, RED, BLUE, GREEN, YELLOW, RED, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, GREEN, BLUE, RED, YELLOW, YELLOW, YELLOW, YELLOW, YELLOW, GREEN, GREEN, GREEN, GREEN, GREEN, BLUE, BLUE, BLUE, BLUE, BLUE, RED, RED, RED, RED, RED,
 };
 static const float InitPosition[4][4][2]={
     {
-        {373,116},
-        {385,115},
-        {386,99},
-        {373,99},
+        {371,117},
+        {385,116},
+        {372,101},
+        {386,100},
     },//GREEN
     {
-        {188,116},
-        {206,116},
-        {192,100},
-        {206,101},
+        {191,115},
+        {206,115},
+        {206,99},
+        {191,99},
 
     },//BLUE
     {
-        {404,588},
-        {438,590},
-        {436,559},
-        {406,559},
+        {206,294},
+        {194,295},
+        {192,284},
+        {205,282},
     },//RED
     {
-        {376,299},
-        {393,300},
-        {393,284},
-        {376,284},
+        {373,295},
+        {390,295},
+        {388,279},
+        {373,279},
     },//YELLOW
 };
+static const int initPosition[4]={16,29,42,3};
 static int count=0;
 
 @implementation planeModels
-
--(CGPoint)getPosition{
-    NSLog(@"Getposition %f,%f",AbusolutePosition[_gridPos][0], AbusolutePosition[_gridPos][1]);
-//    if (!_isOut) {
-//        return ccp(InitPosition[_type][_id][0], InitPosition[_type][_id][1]);
-//    }
-    return ccp(AbusolutePosition[_gridPos][0], AbusolutePosition[_gridPos][1]);
-}
--(PieceType)getPositionType{
-    return posType[_gridPos];
-}
 
 +(id)creatWithtype:(PieceType)type{
     planeModels* modle=[[planeModels alloc]initWithType:type];
     return modle;
 }
--(void)updatePosition{
-    //TODO Do something with animation.
-    [self setPosition:[self getPosition]];
-}
-- (id)initWithType:(PieceType)type
-{
-    switch (type) {
-        case YELLOW:
-            self=[super initWithFile:@"Yellow.png"];
-            break;
-        case BLUE:
-            self=[super initWithFile:@"Blue.png"];
-            break;
-        case GREEN:
-            self=[super initWithFile:@"Green.png"];
-            break;
-        case RED:
-            self=[super initWithFile:@"Red.png"];
-            break;
-        default:
-            break;
-    }
-    if (self) {
-        float piceScale=30/self.contentSize.width;
-        [self setScale:piceScale];
-        [self initPosition];
-        _type=type;
-        _isOut=YES ;
-        _id=[planeModels getID:_type];
-        [self updatePosition];
-    }
-    return self;
-}
--(void)incrementPosition:(int) point{
+-(BOOL)incrementPosition:(int) point{
+    NSLog(@"Type:%d,Pos:%d, id:%d",_type,_gridPos,_id);
     assert(point>0 && point<=6);
     if (!_isOut) {
-        NSLog(@"Denied");
-        return;
+        _isOut=(point==6);
+        return _isOut;
     }
     NSLog(@"Point:%d",point);
     _gridPos=(_gridPos+point)%52;
@@ -181,44 +139,60 @@ static int count=0;
     }
     [self updatePosition];
     NSLog(@"pos%d", _gridPos);
+    return YES;
 }
+-(void)returnBack{
+    [self initPosition];
+    _isOut=NO;
+    [self updatePosition];
+}
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Type:%d, Pos:%d, ID:%d",_type,_gridPos,_id];
+}
+
+/*=============Public and Private Seperator=========================*/
+
+-(CGPoint)getPosition{
+    if (!_isOut) {
+        return ccp(InitPosition[_type][_id][0], InitPosition[_type][_id][1]);
+    }
+    return ccp(AbusolutePosition[_gridPos][0], AbusolutePosition[_gridPos][1]);
+}
+-(PieceType)getPositionType{
+    return posType[_gridPos];
+}
+-(void)updatePosition{
+    //TODO Do something with animation.
+    
+    //[self runAction:[CCMoveTo actionWithDuration:1 position:[self getPosition]]];
+    [self setPosition:[self getPosition]];
+}
+- (id)initWithType:(PieceType)type
+{
+    NSString* fileNames[4]={@"Green.png",@"Blue.png",@"Red.png",@"Yellow.png"};
+    self=[super initWithFile:fileNames[type]];
+    if (self) {
+        float piceScale=15/self.contentSize.height;
+        [self setScale:piceScale];
+        _type=type;
+        _isOut=NO;
+        _id=[planeModels getID:_type];
+        [self initPosition];
+        [self updatePosition];
+    }
+    return self;
+}
+
 +(int) getID:(PieceType)type{
     int theid=0;
-    switch (type) {
-        case GREEN:
-            theid=count%10;
-            count+=1;
-            break;
-        case BLUE:
-            theid=(count/10)%10;
-            count+=10;
-            break;
-        case RED:
-            theid=(count/100)%10;
-            count+=100;
-            break;
-        case YELLOW:
-            theid=(count/1000);
-            count+=1000;
-            break;
-        default:
-            break;
-    }
+    int numLevel[4]={1,10,100,1000};
+    theid=(count/numLevel[type])%10;
+    count+=numLevel[type];
     assert(theid<=4);
     return theid;
 }
 -(void) initPosition{
-    switch (_type) {
-        case RED:
-            _gridPos=42;
-        case BLUE:
-            _gridPos=29;
-        case GREEN:
-            _gridPos=16;
-        case YELLOW:
-            _gridPos=3;
-        default:
-            break;
-    }
+    _gridPos=initPosition[_type];
 }
 @end

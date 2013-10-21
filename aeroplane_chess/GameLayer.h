@@ -11,8 +11,9 @@
 #import "planeModels.h"
 
 @interface GameLayer : CCLayer {
-    planeModels *piece;
+    planeModels *pieces[4][4];
     CCLabelTTF *label;
+    PieceType state;
 }
 +(CCScene*) scene;
 @end

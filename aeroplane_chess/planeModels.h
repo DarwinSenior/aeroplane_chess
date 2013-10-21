@@ -22,6 +22,8 @@ typedef enum{
     int _id;
 }
 +(id) creatWithtype:(PieceType)type;
--(void) incrementPosition:(int) point;
--(PieceType) getPositionType;
+-(BOOL) incrementPosition:(int) point;
+
+
+-(void) returnBack;
 @end

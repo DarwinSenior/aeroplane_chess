@@ -13,6 +13,7 @@ enum spriteTag {
     PIECE_TAG = 2,
     };
 static NSMutableString *positionFile;
+
 @implementation GameLayer
 
 
@@ -21,6 +22,8 @@ static NSMutableString *positionFile;
     
     self = [super init];
     if (self) {
+        state=0;
+        
         positionFile=[[NSMutableString alloc] init];
         NSLog(@"INTO THE GAMEPLAYER");
         CGSize winSize=[[CCDirector sharedDirector] winSize];
@@ -33,15 +36,23 @@ static NSMutableString *positionFile;
         [board setScale:scale];
         [self addChild:board z:1 tag:BOARD_TAG];
         
-        piece=[planeModels creatWithtype:RED];
-        piece.visible=YES;
-        [self addChild:piece z:2];
+        
+        for (int i=0; i<4; i++) {
+            for (int j=0; j<4; j++) {
+                planeModels* piece=[planeModels creatWithtype:i];
+                pieces[i][j]=piece;
+                [self addChild:piece z:2 tag:PIECE_TAG];
+            }
+        }
+        
+//        piece=[planeModels creatWithtype:RED];
+//        piece.visible=YES;
+//        [self addChild:piece z:2];
         
         label=[CCLabelTTF labelWithString:@"HelloWorld" fontName:@"Times" fontSize:30];
         
         [self addChild:label z:2];
         [label setPosition:ccp(winSize.width-label.contentSize.width, winSize.height-label.contentSize.height)];
-    
         
         _mouseEnabled=YES;
         _keyboardEnabled=YES;
@@ -57,59 +68,49 @@ static NSMutableString *positionFile;
 
     return YES;
 }
--(void) move{
-    int point=(int)(CCRANDOM_0_1()*6)+1;
+-(void) move:(planeModels*) piece{
+    int point=(int)(rand()%6)+1;
     [label setString:[NSString stringWithFormat:@"move:%d",point]];
     CGSize winSize=[[CCDirector sharedDirector] winSize];
     [label setPosition:ccp(winSize.width-label.contentSize.width, winSize.height-label.contentSize.height)];
     [piece incrementPosition:point];
 }
+-(planeModels *) chosenPiece{
+    int i=rand()%4;
+    planeModels *chosenPiece=pieces[state][i];
+    return chosenPiece;
+}
 -(BOOL)ccKeyDown:(NSEvent *)event{
     NSLog(@"keycode:%d",[event keyCode]);
-    [self move];
+    [self move:[self chosenPiece]];
+    state=(state+1)%4;
     short keyCode=[event keyCode];
-////    if (keyCode==36) {
-////        [piece incrementPosition];
-////        [piece updatePosition];
-////        NSString* type;
-////        switch ([piece getPositionType]) {
-////            case YELLOW:
-////                type=@"YELLOW";
-////                break;
-////            case BLUE:
-////                type=@"BLUE";
-////                break;
-////            case GREEN:
-////                type=@"GREEN";
-////                break;
-////            case RED:
-////                type=@"RED";
-////                break;
-////            default:
-////                type=@"Error";
-////                break;
-////        }
-////        [label setString:type];
-////    }
-//    if (keyCode==49) {
-//        NSLog(@"%@",positionFile);
+//    if (keyCode==36) {
+//        [piece incrementPosition];
+//        [piece updatePosition];
+//        NSString* type;
+//        switch ([piece getPositionType]) {
+//            case YELLOW:
+//                type=@"YELLOW";
+//                break;
+//            case BLUE:
+//                type=@"BLUE";
+//                break;
+//            case GREEN:
+//                type=@"GREEN";
+//                break;
+//            case RED:
+//                type=@"RED";
+//                break;
+//            default:
+//                type=@"Error";
+//                break;
+//        }
+//        [label setString:type];
 //    }
-//    switch (keyCode) {
-//        case 15:
-//            [positionFile appendFormat:@"RED, "];
-//            break;
-//        case 11:
-//            [positionFile appendFormat:@"BLUE, "];
-//            break;
-//        case 16:
-//            [positionFile appendFormat:@"YELLOW, "];
-//            break;
-//        case 5:
-//            [positionFile appendFormat:@"GREEN, "];
-//            break;
-//        default:
-//            break;
-//    }
+    if (keyCode==49) {
+        NSLog(@"%@",positionFile);
+    }
     return YES;
 }
 
